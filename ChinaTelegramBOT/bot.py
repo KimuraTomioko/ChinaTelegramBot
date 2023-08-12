@@ -203,7 +203,7 @@ def current_yuan_exchange_rate(update, context):
 
     markup_amount = 0.7
     final_rate = yuan_to_rub_rate + markup_amount
-    message = f"Текущий курс ЮАНЯ к рублю с наценкой: {final_rate:.2f}"
+    message = f"Текущий курс ЮАНЯ к рублю: {final_rate:.2f}"
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
 
     
