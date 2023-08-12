@@ -96,7 +96,7 @@ def our_service_prices(update, context):
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
 
 def delivery_price(update, context):
-    photo_path = "China Trends Telegram Bot/ChinaTelegramBOT/Delevery_price.jpg"  # Путь к вашей картинке
+    photo_path = "ChinaTelegramBot/ChinaTelegramBOT/Delevery_price.jpg"  # Путь к вашей картинке
     context.bot.send_photo(chat_id=update.effective_chat.id, photo=open(photo_path, 'rb'))
 
 def payment_methods(update, context):
@@ -128,7 +128,7 @@ from telegram import InputFile
 def blank(update, context):
     message = 'Мини-инструкция по заполнению бланка внутри 🙂'
     # Путь к бланку
-    xlsx_file_path = 'China Trends Telegram Bot/ChinaTelegramBOT/Blank_ChinaTrends.xlsx'
+    xlsx_file_path = 'ChinaTelegramBot/ChinaTelegramBOT/Blank_ChinaTrends.xlsx'
     with open(xlsx_file_path, 'rb') as file:
         xlsx_file = InputFile(file)
         context.bot.send_message(chat_id=update.effective_chat.id, text=message)
@@ -144,10 +144,10 @@ def package(update, context):
     context.bot.send_message(chat_id=update.effective_chat.id, text="Примеры того, как выглядит упаковка😌", reply_markup=markup)
 
 def default_package(update, context):
-    photo1_default = 'China Trends Telegram Bot/ChinaTelegramBOT/photo1_default.jpg'
-    photo2_default = 'China Trends Telegram Bot/ChinaTelegramBOT/photo2_default.jpg'
-    photo3_default = 'China Trends Telegram Bot/ChinaTelegramBOT/photo3_default.jpg'
-    photo4_default = 'China Trends Telegram Bot/ChinaTelegramBOT/photo4_default.jpg'
+    photo1_default = 'ChinaTelegramBot/ChinaTelegramBOT/photo1_default.jpg'
+    photo2_default = 'ChinaTelegramBot/ChinaTelegramBOT/photo2_default.jpg'
+    photo3_default = 'ChinaTelegramBot/ChinaTelegramBOT/photo3_default.jpg'
+    photo4_default = 'ChinaTelegramBot/ChinaTelegramBOT/photo4_default.jpg'
     message = 'Обычная: \n🤓Это картонная коробка + пакет (защитит от влаги) мешок + скотч. \n😎 Идеально подойдёт для одежды, тканей и товаров, которые не повредятся при перевозке даже при падении с высоты (например при падении с фуры) \n💰Цена: от 3$'
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
     context.bot.send_photo(chat_id=update.effective_chat.id, photo=open(photo1_default, 'rb'))
@@ -156,10 +156,10 @@ def default_package(update, context):
     context.bot.send_photo(chat_id=update.effective_chat.id, photo=open(photo4_default, 'rb'))
 
 def cardboard_corners_package(update, context):
-    photo1_cardboard = 'China Trends Telegram Bot/ChinaTelegramBOT/photo1_cardboard.jpg'
-    photo2_cardboard = 'China Trends Telegram Bot/ChinaTelegramBOT/photo2_cardboard.jpg'
-    photo3_cardboard = 'China Trends Telegram Bot/ChinaTelegramBOT/photo3_cardboard.jpg'
-    photo4_cardboard = 'China Trends Telegram Bot/ChinaTelegramBOT/photo4_cardboard.jpg'
+    photo1_cardboard = 'ChinaTelegramBot/ChinaTelegramBOT/photo1_cardboard.jpg'
+    photo2_cardboard = 'ChinaTelegramBot/ChinaTelegramBOT/photo2_cardboard.jpg'
+    photo3_cardboard = 'ChinaTelegramBot/ChinaTelegramBOT/photo3_cardboard.jpg'
+    photo4_cardboard = 'ChinaTelegramBot/ChinaTelegramBOT/photo4_cardboard.jpg'
     message = 'Картонные уголки: \n🤓Это картонная коробка + картонные уголки по всему периметру + пакет (защитит от влаги) мешок + скотч. 😎Идеально подойдёт для товаров, которые готовы выдержать не большие падения. Например для блокнотов и книг, для значков, наборов, не дорогих электронных товаров. Рекомендуем, если хотите сохранить картонные заводские коробки товаров.\n 💰Цена: от 7$'
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
     context.bot.send_photo(chat_id=update.effective_chat.id, photo=open(photo1_cardboard, 'rb'))
@@ -168,11 +168,11 @@ def cardboard_corners_package(update, context):
     context.bot.send_photo(chat_id=update.effective_chat.id, photo=open(photo4_cardboard, 'rb'))
 
 def wood_package(update, context):
-    photo1_wood = 'China Trends Telegram Bot/ChinaTelegramBOT/photo1_wood.jpg'
-    photo2_wood = 'China Trends Telegram Bot/ChinaTelegramBOT/photo2_wood.jpg'
-    photo3_wood = 'China Trends Telegram Bot/ChinaTelegramBOT/photo3_wood.jpg'
-    photo4_wood = 'China Trends Telegram Bot/ChinaTelegramBOT/photo4_wood.jpg'
-    photo5_wood = 'China Trends Telegram Bot/ChinaTelegramBOT/photo5_wood.jpg'
+    photo1_wood = 'ChinaTelegramBot/ChinaTelegramBOT/photo1_wood.jpg'
+    photo2_wood = 'ChinaTelegramBot/ChinaTelegramBOT/photo2_wood.jpg'
+    photo3_wood = 'ChinaTelegramBot/ChinaTelegramBOT/photo3_wood.jpg'
+    photo4_wood = 'ChinaTelegramBot/ChinaTelegramBOT/photo4_wood.jpg'
+    photo5_wood = 'ChinaTelegramBot/ChinaTelegramBOT/photo5_wood.jpg'
     message = 'Деревянная обрешётка:\n 🤓Это картонная коробка + пакет (защитит от влаги) мешок + скотч + деревянный короб\n 😎 Идеально подойдёт для хрупких товаров и тех, где важно сохранить внешний в д продукта (продажный вид)\n 💰Цена: от 8$'
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
     context.bot.send_photo(chat_id=update.effective_chat.id, photo=open(photo1_wood, 'rb'))
