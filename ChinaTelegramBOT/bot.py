@@ -2,7 +2,6 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 from telegram import ReplyKeyboardMarkup, KeyboardButton
 from telegram import InputFile
 import os
-from admin import Admin
 
 def start(update, context):
     button_about = KeyboardButton("📌О компании")
