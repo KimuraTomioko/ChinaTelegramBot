@@ -62,7 +62,7 @@ def handle_message(update, context):
         blank(update, context)
     elif update.message.text == "🔴 Упаковка":
         package(update, context)
-    elif update.message.text == "🔴Обычная упаковка":
+    elif update.message.text == "🔴 Обычная упаковка":
         default_package(update, context)
     elif update.message.text == "🔴 Картонные уголки":
         cardboard_corners_package(update, context)
