@@ -4,17 +4,17 @@ from telegram import InputFile
 import os
 
 def start(update, context):
-    button_about = KeyboardButton("📌О компании")
-    button_services = KeyboardButton("📝Наши услуги")
-    button_prices = KeyboardButton("💰Наши цены")
-    button_ransom = KeyboardButton("📦Выкуп")
-    button_info_poizon_dewu = KeyboardButton("Выкуп товара с Poizon/Dewu👜")
-    button_try_fabrick = KeyboardButton("Проверка фабрик и производств🏭")
-    button_selfransom = KeyboardButton("🛍Самовыкуп")
-    button_scheme_of_work = KeyboardButton("😉Схема работы")
-    button_connect_with_us = KeyboardButton("📨Связаться с нами")
-    button2 = KeyboardButton("🗃Упаковка")
-    button_actual_uan = KeyboardButton("🤔 Актуальный курс юаня")
+    button_about = KeyboardButton("🔴 О компании")
+    button_services = KeyboardButton("🔴 Наши услуги")
+    button_prices = KeyboardButton("🔴 Наши цены")
+    button_ransom = KeyboardButton("🔴 Выкуп")
+    button_info_poizon_dewu = KeyboardButton("🔴 Выкуп товара с Poizon/Dewu")
+    button_try_fabrick = KeyboardButton("🔴 Проверка фабрик и производств")
+    button_selfransom = KeyboardButton("🔴 Самовыкуп")
+    button_scheme_of_work = KeyboardButton("🔴 Схема работы")
+    button_connect_with_us = KeyboardButton("🔴 Связаться с нами")
+    button2 = KeyboardButton("🔴 Упаковка")
+    button_actual_uan = KeyboardButton("🔴 Актуальный курс юаня")
     reply_keyboard = [[button_about], [button_services, button_prices], [button_ransom, button_selfransom], [button_scheme_of_work, button_connect_with_us], [button_info_poizon_dewu, button_try_fabrick] ,[button2], [button_actual_uan]]
     markup = ReplyKeyboardMarkup(reply_keyboard, resize_keyboard=True)
     context.bot.send_message(chat_id=update.effective_chat.id, text="Поздравляем! Вы подписались на ChinaTrendsBot - Доставка из Китая. Используйте /off чтобы приостановить подписку.", reply_markup=markup)
@@ -30,49 +30,49 @@ def on(update, context):
 def handle_message(update, context):
     if update.message.text == 'Start':
         start(update, context)
-    elif update.message.text == '📌О компании':
+    elif update.message.text == '🔴 О компании':
         about_company(update, context)
-    elif update.message.text == '📝Наши услуги':
+    elif update.message.text == '🔴 Наши услуги':
         our_services(update, context)
-    elif update.message.text == '💰Наши цены':
+    elif update.message.text == '🔴 Наши цены':
         our_prices(update, context)
-    elif update.message.text == "📦Выкуп":
+    elif update.message.text == "🔴 Выкуп":
         ransom(update, context)
     elif update.message.text == 'Go Back':
         go_back(update, context)
-    elif update.message.text == '💰Сколько стоят наши услуги':
+    elif update.message.text == '🔴 Сколько стоят наши услуги':
         our_service_prices(update, context)
-    elif update.message.text == '💶За что я плачу?':
+    elif update.message.text == '🔴 За что я плачу?':
         what_do_i_pay(update, context)
-    elif update.message.text == '💸Варианты логистики':
+    elif update.message.text == '🔴 Варианты логистики':
         delivery_price(update, context)
-    elif update.message.text == '💳Способы оплат':
+    elif update.message.text == '🔴 Способы оплат':
         payment_methods(update, context)
     #elif update.message.text == 'В рублях (₽)':
         #payment_in_rubles(update, context)
     #elif update.message.text == 'В юанях (¥)':
         #payment_in_yuan(update, context)
-    elif update.message.text == "🛍Самовыкуп":
+    elif update.message.text == "🔴 Самовыкуп":
         self_ransom(update, context)
-    elif update.message.text == "😉Схема работы":
+    elif update.message.text == "🔴 Схема работы":
         scheme_of_work(update, context)
-    elif update.message.text == "📨Связаться с нами":
+    elif update.message.text == "🔴 Связаться с нами":
         connect_with_us(update, context)
-    elif update.message.text == "📝Бланк заказа":
+    elif update.message.text == "🔴 Бланк заказа":
         blank(update, context)
-    elif update.message.text == "🗃Упаковка":
+    elif update.message.text == "🔴 Упаковка":
         package(update, context)
-    elif update.message.text == "🔥Обычная упаковка":
+    elif update.message.text == "🔴Обычная упаковка":
         default_package(update, context)
-    elif update.message.text == "🔥Картонные уголки":
+    elif update.message.text == "🔴 Картонные уголки":
         cardboard_corners_package(update, context)
-    elif update.message.text == "🔥Деревянная упаковка":
+    elif update.message.text == "🔴 Деревянная упаковка":
         wood_package(update, context)
-    elif update.message.text == "🤔 Актуальный курс юаня":
+    elif update.message.text == "🔴 Актуальный курс юаня":
         current_yuan_exchange_rate(update, context)
-    elif update.message.text == "Выкуп товара с Poizon/Dewu👜":
+    elif update.message.text == "🔴 Выкуп товара с Poizon/Dewu":
         info_poizon_dewu(update, context)
-    elif update.message.text == "Проверка фабрик и производств🏭":
+    elif update.message.text == "🔴 Проверка фабрик и производств":
         try_fabrick(update, context)
 
 def about_company(update, context):
@@ -85,10 +85,10 @@ def our_services(update, context):
 
 
 def our_prices(update, context):
-    button1 = KeyboardButton("💰Сколько стоят наши услуги")
-    button2 = KeyboardButton("💶За что я плачу?")
-    button3 = KeyboardButton("💸Варианты логистики")
-    button4 = KeyboardButton("💳Способы оплат")
+    button1 = KeyboardButton("🔴 Сколько стоят наши услуги")
+    button2 = KeyboardButton("🔴 За что я плачу?")
+    button3 = KeyboardButton("🔴 Варианты логистики")
+    button4 = KeyboardButton("🔴 Способы оплат")
     button5 = KeyboardButton("Go Back")
     reply_keyboard = [[button1, button2], [button3, button4], [button5]]
     markup = ReplyKeyboardMarkup(reply_keyboard, resize_keyboard=True)
@@ -121,7 +121,7 @@ def payment_in_yuan(update, context):
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)'''
 
 def ransom(update, context):
-    button1 = KeyboardButton("📝Бланк заказа")
+    button1 = KeyboardButton("🔴 Бланк заказа")
     # button2 = KeyboardButton("🗃Упаковка")
     button3 = KeyboardButton("Go Back")
     reply_keyboard = [[button1], [button3]]
@@ -140,9 +140,9 @@ def blank(update, context):
         context.bot.send_document(chat_id=update.effective_chat.id, document=xlsx_file)
 
 def package(update, context):
-    button1 = KeyboardButton("🔥Обычная упаковка")
-    button2 = KeyboardButton("🔥Картонные уголки")
-    button3 = KeyboardButton("🔥Деревянная упаковка")
+    button1 = KeyboardButton("🔴 Обычная упаковка")
+    button2 = KeyboardButton("🔴 Картонные уголки")
+    button3 = KeyboardButton("🔴 Деревянная упаковка")
     button4 = KeyboardButton("Go Back")
     reply_keyboard = [[button1], [button2], [button3], [button4]]
     markup = ReplyKeyboardMarkup(reply_keyboard, resize_keyboard=True)
@@ -220,17 +220,17 @@ def try_fabrick(update, context):
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
     
 def go_back(update, context):
-    button_about = KeyboardButton("📌О компании")
-    button_services = KeyboardButton("📝Наши услуги")
-    button_prices = KeyboardButton("💰Наши цены")
-    button_ransom = KeyboardButton("📦Выкуп")
-    button2 = KeyboardButton("🗃Упаковка")
-    button_info_poizon_dewu = KeyboardButton("Выкуп товара с Poizon/Dewu👜")
-    button_try_fabrick = KeyboardButton("Проверка фабрик и производств🏭")
-    button_selfransom = KeyboardButton("🛍Самовыкуп")
-    button_scheme_of_work = KeyboardButton("😉Схема работы")
-    button_connect_with_us = KeyboardButton("📨Связаться с нами")
-    button_actual_uan = KeyboardButton("🤔 Актуальный курс юаня")
+    button_about = KeyboardButton("🔴 О компании")
+    button_services = KeyboardButton("🔴 Наши услуги")
+    button_prices = KeyboardButton("🔴 Наши цены")
+    button_ransom = KeyboardButton("🔴 Выкуп")
+    button2 = KeyboardButton("🔴 Упаковка")
+    button_info_poizon_dewu = KeyboardButton("🔴 Выкуп товара с Poizon/Dewu")
+    button_try_fabrick = KeyboardButton("🔴 Проверка фабрик и производств")
+    button_selfransom = KeyboardButton("🔴 Самовыкуп")
+    button_scheme_of_work = KeyboardButton("🔴 Схема работы")
+    button_connect_with_us = KeyboardButton("🔴 Связаться с нами")
+    button_actual_uan = KeyboardButton("🔴 Актуальный курс юаня")
     reply_keyboard = [[button_about], [button_services, button_prices], [button_ransom, button_selfransom], [button_scheme_of_work, button_connect_with_us], [button_info_poizon_dewu, button_try_fabrick] ,[button2], [button_actual_uan]]
     markup = ReplyKeyboardMarkup(reply_keyboard, resize_keyboard=True)
     context.bot.send_message(chat_id=update.effective_chat.id, text="Начальное меню", reply_markup=markup)
