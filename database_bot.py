@@ -10,18 +10,7 @@ cursor = conn.cursor()
 cursor.execute('''
     CREATE TABLE IF NOT EXISTS about (
         id INTEGER PRIMARY KEY,
-        our_service TEXT,
-        what_do_i_pay TEXT,
-        our_service_prices TEXT,
-        payment_in_rubles TEXT,
-        payment_in_yuan TEXT,
-        blank TEXT,
-        default_package TEXT,
-        cardboard_corners_package TEXT,
-        wood_pacage TEXT,
-        self_ransom TEXT,
-        scheme_of_work TEXT,
-        connect_with_us TEXT
+        our_service TEXT
     )
 ''')
 
@@ -29,9 +18,18 @@ cursor.execute('''
 cursor.execute('''
     CREATE TABLE IF NOT EXISTS picture (
         id INTEGER PRIMARY KEY,
-        pictires BLOB
+        photo BLOB
     )
 ''')
+
+cursor.execute('''
+    CREATE TABLE IF NOT EXISTS admin (
+               id INTEGER PRIMARY KEY,
+               username TEXT,
+               password TEXT
+    )
+''')
+
 
 # Сохранение изменений и закрытие соединения
 conn.commit()
