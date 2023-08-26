@@ -13,7 +13,7 @@ def start(update, context):
     button_connect_with_us = KeyboardButton("📨Связаться с нами")
     button2 = KeyboardButton("🗃Упаковка")
     button_actual_uan = KeyboardButton("🤔 Актуальный курс юаня")
-    reply_keyboard = [[button_about], [button_services, button_prices], [button_ransom, button_selfransom], [button_scheme_of_work, button_connect_with_us], [button_actual_uan]]
+    reply_keyboard = [[button_about], [button_services, button_prices], [button_ransom, button_selfransom], [button_scheme_of_work, button_connect_with_us], [button2], [button_actual_uan]]
     markup = ReplyKeyboardMarkup(reply_keyboard, resize_keyboard=True)
     context.bot.send_message(chat_id=update.effective_chat.id, text="Поздравляем! Вы подписались на ChinaTrendsBot - Доставка из Китая. Используйте /off чтобы приостановить подписку.", reply_markup=markup)
 
@@ -68,32 +68,14 @@ def handle_message(update, context):
         wood_package(update, context)
     elif update.message.text == "🤔 Актуальный курс юаня":
         current_yuan_exchange_rate(update, context)
-    elif update.message.text == "/adminUser:user:Password:userPassword":
-        admin(update, context)
 
 def about_company(update, context):
     message = "ChinaTrends - Ваш надежный партнёр по закупкам товаров из Китая!\n\nУ нас два офиса: в России (Ростов-на-Дону) и в Китае два склада (ИУ и Гуанджоу)🏠\n\nЕсть свой фулфилмент в Москве📦\n\nПомогаем нашим клиентам в оплате товаров в Китае, по оптимальному курсу💲\n\nНайдём любой запрос в требуемые сроки👌🏻"
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
 
-import sqlite3
-
 def our_services(update, context):
-    # Соединение с базой данных
-    conn = sqlite3.connect('database.db')
-    cursor = conn.cursor()
-
-    # Выполнение запроса для получения текста из столбца our_service
-    cursor.execute('SELECT our_service FROM about WHERE id = 1')  # Предполагается, что id=1 соответствует нужной записи
-    result = cursor.fetchone()
-
-    # Закрытие соединения
-    conn.close()
-
-    if result is not None:
-        our_service_text = result[0]
-        context.bot.send_message(chat_id=update.effective_chat.id, text=our_service_text)
-    else:
-        context.bot.send_message(chat_id=update.effective_chat.id, text="Текст о наших услугах не найден.")
+    message = "Наша компания готова предложить комплексное решение по работе с Китаем для Вас и Вашего бизнеса.\nЧем можем быть полезны для Вас: \n🔴 Закупить товар с различных китайских сайтов и напрямую с фабрики 🔴\nДоговориться о цене с поставщиком\n🔴 Выбить для вас скидку.\n🔴 Проверить на своём складе на качество и отсутствие брака (в случае обнаружения вернуть или обменять)\n🔴 Упаковать и доставить до вашего адреса.\n🔴 По вашему тех заданию упаковать и отправить товар на склады Маркетплейсов сразу в Москве.\n\nВесь спектр услуг по работе с Китаем под ключ 🔑"
+    context.bot.send_message(chat_id=update.effective_chat.id, text=message)
 
 
 def our_prices(update, context):
@@ -241,7 +223,7 @@ def admin():
     pass
 
 def main():
-    updater = Updater(token='5950829578:AAE4nPs9JueVzKu_Q_zEj_iy1joYPuf5jvA', use_context=True)
+    updater = Updater(token='6364323743:AAFKSSmVGzx8TAH-gZz05ms6y1NySOVstsk', use_context=True)
     dispatcher = updater.dispatcher
     dispatcher.add_handler(CommandHandler('start', start))
     dispatcher.add_handler(CommandHandler('off', off))
