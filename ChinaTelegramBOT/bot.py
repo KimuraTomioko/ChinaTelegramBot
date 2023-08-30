@@ -133,7 +133,7 @@ from telegram import InputFile
 def blank(update, context):
     message = 'Мини-инструкция по заполнению бланка внутри 🙂'
     # Путь к бланку
-    xlsx_file_path = 'Blank_ChinaTrends.xlsx'
+    xlsx_file_path = 'ChinaTelegramBOT/Blank_ChinaTrends.xlsx'
     with open(xlsx_file_path, 'rb') as file:
         xlsx_file = InputFile(file)
         context.bot.send_message(chat_id=update.effective_chat.id, text=message)
