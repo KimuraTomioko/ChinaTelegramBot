@@ -206,7 +206,7 @@ def current_yuan_exchange_rate(update, context):
     data = requests.get('https://www.cbr-xml-daily.ru/daily_json.js').json()
     yuan_to_rub_rate = data['Valute']['CNY']['Value']
 
-    markup_amount = 0.7
+    markup_amount = 0.9
     final_rate = yuan_to_rub_rate + markup_amount
     message = f"❗️Курсы меняются каждый день. Пожалуйста, перед оплатой, уточняйте актуальный курс\n Текущий курс ЮАНЯ к рублю: {final_rate:.2f}"
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
